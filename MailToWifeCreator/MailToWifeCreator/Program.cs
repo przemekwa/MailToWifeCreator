@@ -15,14 +15,14 @@ namespace MailToWifeCreator
 
             IStringCreator subjectCreator = new SubjectCreator();
 
-            var test = new SendMailer(new MailInfo
+            IMailSender mailSender = new OutlookSender();
+
+            mailSender.Send(new MailInfo
             {
                 To = "jolanta.walkowska@dsm.com",
                 Subject = subjectCreator.GetString(),
                 Body = bodyCreator.GetString()
             });
-
-            test.SendMailWithNewWindow();
         }
     }
 }

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HtmlAgilityPack;
 using MailToWifeCreator.Dictionary;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 
 namespace MailToWifeCreator.Creators
