@@ -1,7 +1,9 @@
+using MailToWifeCreator.Dto;
+
 namespace MailToWifeCreator
 {
     internal interface IMailSender
     {
-        void Send(MailInfo mailInfo);
+        void Send(MailDto mailDto);
     }
 }

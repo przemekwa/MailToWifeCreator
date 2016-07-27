@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MailToWifeCreator.Creators;
+using MailToWifeCreator.Dto;
 
 namespace MailToWifeCreator
 {
@@ -17,7 +18,7 @@ namespace MailToWifeCreator
 
             IMailSender mailSender = new OutlookSender();
 
-            mailSender.Send(new MailInfo
+            mailSender.Send(new MailDto
             {
                 To = "jolanta.walkowska@dsm.com",
                 Subject = subjectCreator.GetString(),

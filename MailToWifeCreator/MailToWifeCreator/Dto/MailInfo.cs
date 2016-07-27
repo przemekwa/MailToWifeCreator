@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace MailToWifeCreator
+namespace MailToWifeCreator.Dto
 {
-    public class MailInfo
+    public class MailDto
     {
         public string To { get; set; }
         public string Cc { get; set; }

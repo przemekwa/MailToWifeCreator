@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MailToWifeCreator.Dto;
 using Microsoft.Office.Interop.Outlook;
 
 namespace MailToWifeCreator
 {
     class OutlookSender : IMailSender
     {
-        private MailInfo mailInfo;
+        private MailDto mailDto;
 
-        public void Send(MailInfo mailInfo)
+        public void Send(MailDto mailDto)
         {
-            this.mailInfo = mailInfo;
+            this.mailDto = mailDto;
 
             this.SendMailWithNewWindow();
         }
@@ -24,9 +25,9 @@ namespace MailToWifeCreator
 
             var oMailItem = (_MailItem)oApp.CreateItem(OlItemType.olMailItem);
 
-            oMailItem.Body = this.mailInfo.Body;
+            oMailItem.Body = this.mailDto.Body;
 
-            oMailItem.Subject = this.mailInfo.Subject;
+            oMailItem.Subject = this.mailDto.Subject;
 
             var iPosition = oMailItem.HTMLBody.Length + 1;
 
@@ -38,9 +39,9 @@ namespace MailToWifeCreator
             //    iPosition++;
             //}
 
-            oMailItem.To = mailInfo.To;
+            oMailItem.To = mailDto.To;
 
-            oMailItem.CC = mailInfo.Cc;
+            oMailItem.CC = mailDto.Cc;
 
             oMailItem.Display(true);
         }

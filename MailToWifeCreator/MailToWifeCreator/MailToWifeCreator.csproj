@@ -65,7 +65,7 @@
     <Compile Include="Dictionary\PrefixNameDictionary.cs" />
     <Compile Include="Dictionary\SentenceDictonary.cs" />
     <Compile Include="IMailSender.cs" />
-    <Compile Include="MailInfo.cs" />
+    <Compile Include="Dto\MailInfo.cs" />
     <Compile Include="OutlookSender.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
