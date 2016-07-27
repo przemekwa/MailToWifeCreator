@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MailToWifeCreator.Creators;
 
 namespace MailToWifeCreator
 {
@@ -10,6 +11,18 @@ namespace MailToWifeCreator
     {
         static void Main(string[] args)
         {
+            IStringCreator bodyCreator = new BodyCreator();
+
+            IStringCreator subjectCreator = new SubjectCreator();
+
+            var test = new SendMailer(new MailInfo
+            {
+                To = "jolanta.walkowska@dsm.com",
+                Subject = subjectCreator.GetString(),
+                Body = bodyCreator.GetString()
+            });
+
+            test.SendMailWithNewWindow();
         }
     }
 }
